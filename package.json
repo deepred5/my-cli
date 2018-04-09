@@ -1,0 +1,33 @@
+{
+  "name": "nmcc-cli",
+  "version": "1.0.4",
+  "description": "",
+  "main": "nmcc.js",
+  "bin": {
+    "nmcc": "nmcc.js"
+  },
+  "scripts": {
+    "build": "npm run -s build:src && npm run -s build:assets",
+    "build:src": "tsc",
+    "build:assets": "node scripts/copy.script.js src/commands/generate/templates bin/commands/generate/templates",
+    "clean": "node scripts/clean.script.js bin/* && node scripts/clean.script.js coverage/*",
+    "clean:build": "npm run -s clean && npm run -s build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yyfront/nmcc-cli.git"
+  },
+  "dependencies": {
+    "caporal": "^0.6.0",
+    "fs-extra": "^5.0.0",
+    "os-name": "^2.0.1"
+  },
+  "devDependencies": {
+    "nodemon": "^1.12.1",
+    "ts-node": "^3.3.0",
+    "@types/node": "^7.0.48",
+    "typescript": "^2.4.1"
+  },
+  "author": "yangjd",
+  "license": "MIT"
+}

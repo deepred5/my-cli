@@ -1,0 +1,6 @@
+.idea/
+.vscode/
+.gitignore
+node_modules/
+src/
+scripts/
